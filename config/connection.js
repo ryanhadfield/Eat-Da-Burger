@@ -12,7 +12,7 @@ if (process.env.JAWSDB_URL){
     port: 3306,
     user: 'root',
     // NOTE: Be sure to add your MySQL password here!
-    password: 'bootcamp79',
+    password: '',
     database: 'burgers_db',
   });
 }
