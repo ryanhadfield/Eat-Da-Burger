@@ -56,6 +56,7 @@ const orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ') ';
 
+   // "insert into burgers(burger_name,devoured) values (?,?)"
     console.log(queryString);
 
     connection.query(queryString, vals, (err, result) => {
@@ -74,6 +75,8 @@ const orm = {
     queryString += objToSql(objColVals);
     queryString += ' WHERE ';
     queryString += condition;
+
+    // update burgers set devoured =true where id=2 
 
     console.log(queryString);
     connection.query(queryString, (err, result) => {
