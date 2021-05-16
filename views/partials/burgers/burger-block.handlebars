@@ -1,9 +1,16 @@
 <li>
+	<div class="d-grid gap-2 d-md-flex justify-content-md-end" id="burgerfont">
 	{{burger_name}}
-
-	<button class="change-devour" data-id="{{id}}" data-newDevour="{{devour}}">
-		{{#if devour}}Devour Burger!{{else}}Have another burger!{{/if}}
-	</button>
-
-	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
+		<button type="button" class="change-devour btn btn-warning btn-sm me-sm-2" data-id="{{id}}"
+			data-newDevour="{{devour}}">
+			{{#if devour}}
+			Devour Burger!
+			{{else}}
+			Order burger again!
+			{{/if}}
+		</button>
+		<button type="button" class="delete-burger btn btn-dark btn-sm" data-id="{{this.id}}">
+			DELETE
+		</button>
+	</div>
 </li>
