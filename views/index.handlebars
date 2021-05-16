@@ -1,38 +1,45 @@
-<h1>Wasatch Burgers</h1>
+<div class="row">
+  <div class="col-md-6 offset-md-3 p-4">
+    <h3 class="flow-text">Order a Burger</h3>
+    <form id="create-form">
+      <div class="form-group">
+        <input class="form-control" type="text" id="ca" placeholder="Burger Name">
+      </div>
 
-<h2>Burgers that need to be eaten</h2>
+      <div>
+        <label>
+          <input type="radio" name="devoured" value="0" id="uneaten" checked> <span>Order Burger</span><br>
+          <input type="radio" name="devoured" value="1" id="devoured"><span> Eat Burger Now!</span>
+        </label>
+      </div>
 
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  {{> burgers/burger-block devour=true}}
-  {{/unless}}
-  {{/each}}
-</ul>
+      <button class="button btn btn-warning" type="submit">Order Burger</button>
+    </form>
+  </div>
+</div>
 
-<h2>Burgers you've devoured</h2>
+<div class="row">
+  <div class="col-lg-6">
+    <h3>Burger Up!</h3>
 
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  {{> burgers/burger-block devour=false}}
-  {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form id="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="burger_name">
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block devour=true}}
+      {{/unless}}
+      {{/each}}
+    </ul>
   </div>
 
-  <div class="form-group">
-    <label for="devoured">Devour</label><br>
-    <input type="radio" name="devoured" value="1" id="devoured" checked> Eat now!<br>
-    <input type="radio" name="devoured" value="0" id="uneaten"> Save burger for later
-  </div>
+  <div class="col s-12 m-6">
+    <h3>Burgers Eaten:</h3>
 
-  <button type="submit">Add Burger</button>
-</form>
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burger-block devour=false}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
